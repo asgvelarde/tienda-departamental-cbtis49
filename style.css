@@ -1,0 +1,46 @@
+:root { 
+    --primary: #2c3e50; 
+    --accent: #3498db; 
+    --bg: #ecf0f1; 
+    --danger: #e74c3c;
+    --success: #27ae60;
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; background: var(--bg); color: #333; }
+
+nav { width: 250px; background: var(--primary); color: white; height: 100vh; padding: 20px; position: fixed; }
+nav h2 { color: #3498db; margin-bottom: 5px; }
+nav ul { padding: 0; margin-top: 30px; }
+nav li { padding: 15px; cursor: pointer; list-style: none; transition: 0.3s; border-radius: 5px; margin-bottom: 5px; }
+nav li:hover { background: var(--accent); padding-left: 25px; }
+
+main { flex: 1; margin-left: 250px; padding: 40px; min-height: 100vh; }
+
+.card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+
+h1, h2 { color: var(--primary); }
+
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+table th, table td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+table th { background-color: var(--primary); color: white; }
+table tr:nth-child(even) { background-color: #f2f2f2; }
+
+
+.form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+label { font-weight: bold; margin-bottom: 5px; }
+select, input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+
+button { 
+    padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; 
+    background: var(--accent); color: white; font-weight: bold; transition: 0.3s;
+}
+button:hover { opacity: 0.8; }
+.btn-print { background: var(--success); }
+
+@media print {
+    nav, button, h1 { display: none !important; }
+    main { margin-left: 0; padding: 0; }
+    .card { box-shadow: none; border: 1px solid #000; }
+    #orden-compra-container { display: block !important; position: static; }
+}
